@@ -4,6 +4,11 @@
         <h2 class="text-center">Ubah data siswa</h2>
         <hr class="mb-3">
     <div class="container border">
+        <div class="row justify-content-center">
+            <div class="col-md-2">
+                <a href="/student" class="btn btn-primary text-light  my-3">Semua Data</a>
+            </div>
+        </div>
     
         <div class="row justify-content-center">
             <div class="col-md-4">
@@ -12,13 +17,23 @@
                     <div class="mb-3">
                         <label for="nis" class="form-label">Nis</label>
                         <input type="text" name="nis" class="form-control @error('nis') is-invalid @enderror" id="nis" value="{{ @old('nis', $student->nis) }}">
+                        @error('nis')
+                            <div id="validationServer05Feedback" class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
 
                         <input type="hidden" name="id" class="form-control" id="id" value="{{ $student->id }}">
                     </div>
 
                     <div class="mb-3">
                       <label for="nama" class="form-label">Nama</label>
-                      <input type="text" name="nama" class="@error('nis') is-invalid @enderror form-control" id="nama" value="{{ @old('nama', $student->nama) }}">
+                      <input type="text" name="nama" class="@error('nama') is-invalid @enderror form-control" id="nama" value="{{ @old('nama', $student->nama) }}">
+                      @error('nama')
+                            <div id="validationServer05Feedback" class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                      @enderror
                     </div>
                     
                     <div class="mb-3">
@@ -38,11 +53,21 @@
                     <div class="mb-3">
                         <label for="notelp" class="form-label">No Telpon</label>
                         <input type="number" name="notelp" class="@error('notelp') is-invalid @enderror form-control" id="notelp" value="{{ @old('notelp', $student->notelp) }}">
+                        @error('notelp')
+                            <div id="validationServer05Feedback" class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input type="text" name="email" class="@error('email') is-invalid @enderror form-control" id="email" value="{{ @old('email', $student->email) }}">
+                        @error('email')
+                            <div id="validationServer05Feedback" class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </form>

@@ -17,7 +17,15 @@ class StudentController extends Controller
     }
 
     public function store(Request $request) {
-        Student::create($request->all());
+        $validated = $request->validate([
+            'nis' => 'required|unique:students',
+            'nama' => 'required',
+            'jeniskelamin' => 'required',
+            'notelp' => 'required',
+            'email' => 'required|email'
+        ]);
+
+        Student::create($validated);
 
         return redirect()->route('student')->with('success', 'Data Berhasil Disimpan');
     }
