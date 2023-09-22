@@ -19,6 +19,7 @@
                 <th scope="col">Jenis Kelamin</th>
                 <th scope="col">No Telpon</th>
                 <th scope="col">Email</th>
+                <th scope="col">Photo</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
@@ -31,6 +32,9 @@
                   <td>{{ $student->jeniskelamin }}</td>
                   <td>{{ $student->notelp }}</td>
                   <td>{{ $student->email }}</td>
+                  <td>
+                    <img src="{{ asset('storage/' . $student->photo) }}" style="width: 80px" alt="">
+                  </td>
                   <td>
                       <a href="/student/{{ $student->id }}" class="btn btn-warning">Edit</a>
                       <a href="/studentdelete/{{ $student->id }}" onclick="return confirm('Yakin hapus data ?')" class="btn btn-danger">Delete</a>

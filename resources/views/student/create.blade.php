@@ -70,6 +70,12 @@
                             </div>
                         @enderror
                     </div>
+
+                    <div class="mb-3">
+                        <label class="input-group-text" for="inputGroupFile01">Upload Gambar</label>
+                        <input type="file" name="photo" class="form-control" id="inputGroupFile01">
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </form>
             </div>

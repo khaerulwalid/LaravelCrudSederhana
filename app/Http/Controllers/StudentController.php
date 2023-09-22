@@ -22,8 +22,13 @@ class StudentController extends Controller
             'nama' => 'required',
             'jeniskelamin' => 'required',
             'notelp' => 'required',
-            'email' => 'required|email'
+            'email' => 'required|email',
+            'photo' => 'image|file|max:1024'
         ]);
+
+        if($request->file('photo')) {
+            $validated['photo'] = $request->file('photo')->store('student-image');
+        }
 
         Student::create($validated);
 

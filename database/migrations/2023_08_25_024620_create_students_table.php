@@ -19,6 +19,7 @@ return new class extends Migration
             $table->enum('jeniskelamin', ['Laki-laki', 'Perempuan']);
             $table->string('notelp', 12);
             $table->string('email');
+            $table->string('photo');
 
             $table->timestamps();
         });
